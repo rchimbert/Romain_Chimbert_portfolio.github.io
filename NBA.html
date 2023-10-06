@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>NBA statistics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">NBA statistics</a>
+					</header>
+					<!-- Nav -->
+<nav id="nav">
+	<ul class="icons">
+		<li><a href="https://www.linkedin.com/in/romain-chimbert-988448201/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+		<li><a href="https://github.com/rchimbert" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+	</ul>
+</nav>
+
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Project<br />
+									explanation</h1>
+								</header>
+
+								<!-- Text stuff -->
+								<h2>Project overview</h2>
+								<span class="image fit"><img src="images/tableau NBA overview.png" alt="" /></span>
+								This end-to-end project consists in gathering some statistics <b>by nba franchises</b> such as the all-time top 5 scorer, the top 5 rebounders, 
+								the number of championships won by the franchise, or their three point shooting throughout the ages on an interactive dashboard. One of the main 
+								difficulty is that <b>some franchises have change names several times during their history</b>, so we have to group those statistics under the same franchise code.
+								<hr />
+								<h2>Data gathering, cleaning and exporting to csv file with python</h2>
+									First, I gathered some data of players attribute and player statistics by seasons from 1950 to 2017 thanks to
+									a Kaggle dataset available online (<a href="https://www.kaggle.com/datasets/drgilermo/nba-players-stats?select=player_data.csv">The dataset</a>, I used the season_stat.csv and player_data.csv). Then, I gathered some more datas from a website gathering every NBA champions.
+									I then <b>cleaned and processed the data</b> in order to make further SQL request then. This step is detailed on this code 
+									available on my Github: <a href="https://github.com/rchimbert/NBA_statistics-/blob/main/data_cleaning.ipynb">The code</a>.</p>
+									<hr />
+										<h2>Creation of SQL table and filling them with the data rows</h2>
+										I first created the structures of the table used for the SQL request and made few modifications of some tables element directly on SQL. Then, I created another table 
+										to gather every NBA franchises former name(s) in order to <b>count the number of championship won by the franchise</b> and some all-time statistics such as the best scorers. 
+										This step is detailed on this code 
+									available on my Github: <a href="https://github.com/rchimbert/NBA_statistics-/blob/main/Create%20Table.pgsql">The code</a>.</p>
+									Finally, in order to fill those tables created with all the rows available very quickly, I just run these lines of code on the <b>postgreSQL
+									shell</b>.  
+									<span class="image fit"><img src="images/Capture d’écran copy tableaux.png" alt="" /></span>
+									<hr />
+									<h2>SQL queries in order to fill the Tableau Dashboard with statistics</h2>
+									To get some more insight about this seasons statistics dataset by player, I created several <b>SQL queries on postgreSQL</b> to be shown then in a Tableau Dashboard.
+									This step is detailed on this code 
+									available on my Github: <a href="https://github.com/rchimbert/NBA_statistics-/blob/main/Select%20Query.pgsql">The code</a>.</p>
+									<hr />
+									<h2>Tableau dashboard visual</h2>
+									Finally, I was able to create a visual available on my Tableau Public profile. On this dashboard, we can <b>select an NBA franchise at the top left corner</b>, and it displays the top 5 all-time scorer, rebounder, passer, blocker by franchise and the number of championships won. 
+									Every player attributes (height and weight) are visible <b>by dragging the mouse on their name</b>. 
+									This interactive visual is available here on my Tableau Public profile (<b>note: if you are on laptop think about ticking the option of displaying the dashboard as on a desktop at the bottom</b>): <a href="https://public.tableau.com/app/profile/romain.chimbert/viz/NBAdashboard_16927290271030/Dashboard_nba">The dashboard</a>.</p>
+
+	
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
